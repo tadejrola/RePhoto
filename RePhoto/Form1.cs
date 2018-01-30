@@ -48,8 +48,7 @@ namespace RePhoto
                     }
                 }
             }
-            for (int i = 0; i < this.lv_files.Columns.Count - 1; i++) this.lv_files.AutoResizeColumn(i, ColumnHeaderAutoResizeStyle.ColumnContent);
-            this.lv_files.Columns[this.lv_files.Columns.Count - 1].Width = -2;
+            ResizeColumns();
         }
 
         private void btn_removeSelected_Click(object sender, EventArgs e)
@@ -121,6 +120,14 @@ namespace RePhoto
             }
 
             return destImage;
+        }
+
+        private void ResizeColumns()
+        {
+            for (int i = 0; i < lv_files.Columns.Count - 1; i++) lv_files.AutoResizeColumn(i, ColumnHeaderAutoResizeStyle.ColumnContent);
+            {
+                lv_files.Columns[lv_files.Columns.Count - 1].Width = -2;
+            }
         }
     }
 }
