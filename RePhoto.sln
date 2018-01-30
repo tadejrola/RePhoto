@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RePhoto", "RePhoto\RePhoto.csproj", "{51DA29AE-EFBF-4A7C-9231-E8B8B6E8735B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51DA29AE-EFBF-4A7C-9231-E8B8B6E8735B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51DA29AE-EFBF-4A7C-9231-E8B8B6E8735B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51DA29AE-EFBF-4A7C-9231-E8B8B6E8735B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51DA29AE-EFBF-4A7C-9231-E8B8B6E8735B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {741DF6E8-1B4A-455D-B0CA-6D1C1862FF76}
+	EndGlobalSection
+EndGlobal
