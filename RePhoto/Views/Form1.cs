@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RePhoto.Views;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,7 +21,6 @@ namespace RePhoto
             InitializeComponent();
             lv_files.View = View.Details;
             lv_files.Columns.Add("File location", -2, HorizontalAlignment.Left);
-            lv_files.Columns.Add("File name", -2, HorizontalAlignment.Left);
         }
 
         private void btn_loadFiles_Click(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace RePhoto
                     try
                     {
                         FileInfo info = new FileInfo(file);
-                        lv_files.Items.Add(new ListViewItem(new[] { info.FullName, info.Name }));
+                        lv_files.Items.Add(new ListViewItem(new[] { info.FullName }));
                     }
                     catch (Exception ex)
                     {
@@ -128,6 +128,37 @@ namespace RePhoto
             {
                 lv_files.Columns[lv_files.Columns.Count - 1].Width = -2;
             }
+        }
+
+        private void btn_newProject_Click(object sender, EventArgs e)
+        {
+            NewProject newProject = new NewProject();
+            newProject.Show();
+        }
+
+        private void btn_rename_Click(object sender, EventArgs e)
+        {
+            string city = txt_name.Text;
+            var files = lv_files.Items;
+            int index = 1;
+            foreach (ListViewItem file in files)
+            {
+                string fileName = Path.GetFileName(file.Text);
+                string path = file.Text;
+                string extension = Path.GetExtension(file.Text);
+                string newFileName = index + "_" + city + extension;
+                string newPath = path.Replace(fileName, newFileName);
+                File.Move(file.Text, newPath);
+                index = index + 1;
+                file.Text = newPath;
+                lv_files.Refresh();
+            }
+        }
+
+        private void btn_newProjectGer_Click(object sender, EventArgs e)
+        {
+            NewProjectGER newProject = new NewProjectGER();
+            newProject.Show();
         }
     }
 }
