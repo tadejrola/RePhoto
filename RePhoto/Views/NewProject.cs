@@ -27,7 +27,7 @@ namespace RePhoto.Views
             string cityCountry = city + " - " + country;
             string description = txt_description.Text;
             int numberOfPhotos = int.Parse(num_numberOfPhotos.Value.ToString());
-            string html = File.ReadAllText(@"E:\PROJEKTI\RePhoto\RePhoto\Content\project_template.html");
+            string html = File.ReadAllText(@"./project_template.html");
             html = html.Replace("//NASLOV//", title);
             html = html.Replace("//TIPDELA//", typeOfWork);
             html = html.Replace("//KRAJ-DRZAVA//", cityCountry);
